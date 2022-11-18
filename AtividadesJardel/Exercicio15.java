@@ -39,7 +39,7 @@ public class Exercicio15 {
                 JOptionPane.showMessageDialog(null, "Livro da posição: "+livro+"\n"+livros.get(livro));
                 opcao2 = Integer.parseInt(JOptionPane.showInputDialog("Deseja Pesquisar outro livro?\n1. Para Continuar\n2. Encerrar Aplicação"));
             }else{
-                opcao2 = Integer.parseInt(JOptionPane.showInputDialog("Opção Inválida\n1. Para cadastrar livro\n2. Para Encerrar Aplicação"));
+                opcao2 = Integer.parseInt(JOptionPane.showInputDialog("Opção Inválida\n1. Para pesquisar livro\n2. Para Encerrar Aplicação"));
             }
         }
     }
