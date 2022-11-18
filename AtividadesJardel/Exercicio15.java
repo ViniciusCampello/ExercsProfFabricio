@@ -21,25 +21,26 @@ public class Exercicio15 {
                 editora = JOptionPane.showInputDialog("Digite a editora do livro: ");
                 genero = JOptionPane.showInputDialog("Digite o gênero do livro: ");
                 ano = JOptionPane.showInputDialog("Digite o ano de lançamento do livro: ");
-                JOptionPane.showMessageDialog(null, "Livro Cadastrado com Sucesso!\nTítulo: "+titulo+"\nAutor: "+autor+
+                JOptionPane.showMessageDialog(null, "Livro "+(qtdLivro+1)+" Cadastrado com Sucesso!\nTítulo: "+titulo+"\nAutor: "+autor+
                 "\nEdição: "+edicao+"\nEditora: "+editora+"\nGênero: "+genero+"\nAno de Lançamento: "+ano);
                 test = "Título: "+titulo+"\nAutor: "+autor+"\nEdição: "+edicao+
                 "\nEditora: "+editora+"\nGênero: "+genero+"\nAno de Lançamento: "+ano;
                 livros.add(test);
                 qtdLivro++;
-                opcao = Integer.parseInt(JOptionPane.showInputDialog("Deseja Continuar?\n1. Para cadastrar outro livro\n2. Para Encerrar Cadastro"));
+                opcao = Integer.parseInt(JOptionPane.showInputDialog("Deseja Continuar?\n1. Para Cadastrar outro livro\n2. Para Encerrar Cadastro"));
             }else{
-                opcao = Integer.parseInt(JOptionPane.showInputDialog("Opção Inválida\n1. Para cadastrar livro\n2. Para Encerrar Cadastro"));
+                opcao = Integer.parseInt(JOptionPane.showInputDialog("Opção Inválida\n1. Para Cadastrar livro\n2. Para Encerrar Cadastro"));
             }
         }
         JOptionPane.showMessageDialog(null, "Total de livros cadastrados: " + qtdLivro + " livros.");
         while (opcao2 != 2){
-            livro = Integer.parseInt(JOptionPane.showInputDialog("Digite um número de 0 a "+(qtdLivro-1)+" para consultar o livro cadastrado."));
-            if (livro >= 0 && livro <= (qtdLivro -1)){
-                JOptionPane.showMessageDialog(null, "Livro da posição: "+livro+"\n"+livros.get(livro));
+            livro = Integer.parseInt(JOptionPane.showInputDialog("Digite um número de 1 a "+qtdLivro+" para consultar o livro cadastrado."));
+            if (livro >= 1 && livro <= qtdLivro){
+                livro--;
+                JOptionPane.showMessageDialog(null, "Livro da posição: "+(livro+1)+"\n"+livros.get(livro));
                 opcao2 = Integer.parseInt(JOptionPane.showInputDialog("Deseja Pesquisar outro livro?\n1. Para Continuar\n2. Encerrar Aplicação"));
             }else{
-                opcao2 = Integer.parseInt(JOptionPane.showInputDialog("Opção Inválida\n1. Para pesquisar livro\n2. Para Encerrar Aplicação"));
+                opcao2 = Integer.parseInt(JOptionPane.showInputDialog("Opção Inválida\n1. Para Pesquisar livro\n2. Para Encerrar Aplicação"));
             }
         }
     }
